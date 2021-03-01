@@ -1,0 +1,13 @@
+service: billwebhooktest
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  environment:
+    WEBHOOK_URL: "https://hooks.slack.com/services/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"
+
+functions:
+  billtestwebhook:
+    handler: handler.billtestwebhook
+    events:
+      - http: POST billtestwebhook
